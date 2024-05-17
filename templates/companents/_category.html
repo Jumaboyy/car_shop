@@ -1,0 +1,51 @@
+<ul class="tab-control">
+    <button>⬆️</button>
+    <button>⬇️️</button>
+    <li><a class="active" href="{% url 'index' %}">All</a></li>
+    {% for category in categories %}
+    <li><a class="" href="{% url 'product_by_category' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+<div id="tab-1">
+    <div class="row no-gutters-sm" style="margin: 30px 30px;">
+        {% for product in products %}
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="product">
+                <a class="product-img" href="{% url 'shop_detail' product.id %}">
+                    <img src="{{ product.image.url }}">
+                </a>
+                <h5 class="product-type">{{ product.category }}</h5>
+                <h3 class="product-name">{{ product.name }}</h3>
+                <h3 class="product-price">${{ product.price }}</h3>
+                <h3 class="product-price">${{ product.description | truncatewords:10 }}</h3>
+                <div class="product-select">
+                    <a href="{% url 'to_cart' product.id 'add' %}">
+                        <button class="add-to-wishlist round-icon-btn"><i
+                                class="icon_heart_alt"></i>
+                     </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if products_category %}
+        {% for product in products_category %}
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="product">
+                <a class="product-img" href="{% url 'shop_detail' product.id %}">
+                    <img src="{{ product.image.url }}">
+                </a>
+                <h5 class="product-type">{{ product.category }}</h5>
+                <h3 class="product-name">{{ product.name }}</h3>
+                <h3 class="product-price">${{ product.price }}</h3>
+                <div class="product-select">
+                    <button class="add-to-wishlist round-icon-btn"><i class="icon_heart_alt"></i></button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</div>

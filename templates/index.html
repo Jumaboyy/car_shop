@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="uz">
+<head>
+    <title>Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="keywords"
+          content="blog, business, clean, clear, cooporate, creative, design web, flat, marketing, minimal, portfolio, shop, shopping, unique">
+    <meta name="author" content="MARTECH | Deer Creative Theme">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom_bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/elegant.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/scroll.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.fancybox.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/images/logo.jpg' %}">
+</head>
+<body>
+<div id="main">
+    <header>
+        <div class="header-block d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="header-left d-flex flex-column flex-md-row align-items-center">
+                            <p class="d-flex align-items-center"><i class="fas fa-envelope"></i>jumaboynematov280@gmail.com
+                            </p>
+                            <p class="d-flex align-items-center"><i class="fas fa-phone"></i>+998 91 680 02 25</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="header-right d-flex flex-column flex-md-row justify-content-md-end justify-content-center align-items-center">
+                            <div class="social-link d-flex"><a href="">
+                                <i class="fab fa-facebook-f"> </i></a><a
+                                    href="https://www.facebook.com/share/xk9W4JoHAmNEkRAt/?mibextid=qi2Omg">
+                                <i class="fab fa-telegram"></i></a><a href="">
+                                <i class="fab fa-invision"> </i></a><a href="">
+                                <i class="fab fa-instagram"> </i></a>
+                            </div>
+                            <div class="language">
+                                <div class="selected-language"><img
+                                        src="{% static 'assets/images/homepage01/usa.jpg' %}" alt="">English<i
+                                        class="arrow_carrot-down"></i>
+                                    <ul class="list-language">
+                                        <li><img src="{% static 'assets/images/homepage01/usa.jpg' %}" alt="">English
+                                        </li>
+                                        <li><img src="{% static 'assets/images/homepage01/usa.jpg' %}" alt="">Spain</li>
+                                        <li><img src="{% static 'assets/images/homepage01/usa.jpg' %}" alt="">Japan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="login d-flex"><a href="{% url 'login' %}"><i class="fas fa-user"></i>Login</a>
+                                {% if user.username %}
+                                <a style="margin-left:10px" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navigation d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2"><a class="logo" href="index.html"><img
+                            src="{% static 'assets/images/logo.jpg' %}" alt=""
+                            style="width:70px"></a>
+                    </div>
+                    <div class="col-8">
+                        <div class="navgition-menu d-flex align-items-center justify-content-center">
+                            <ul class="mb-0">
+                                <li class="toggleable"><a class="menu-item active" href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li class="toggleable"><a class="menu-item" href="{% url 'shop' %}">Shop</a>
+                                </li>
+                                <li class="toggleable"><a class="menu-item" href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'login' %}">login</a></li>
+                                        <li><a href="{% url 'register' %}">register</a></li>
+                                        <li><a href="{% url 'cart' %}">Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li class="toggleable"><a class="menu-item" href="about_us.html">About us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control"
+                                                                                    href="#"><i class="fas fa-bars"></i></a>
+                            <div id="ogami-mobile-menu">
+                                <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
+                                <div class="mobile-menu_items">
+                                    <ul class="mb-0 d-flex flex-column">
+
+                                        <li class="toggleable"><a class="menu-item"
+                                                                  href="shop_grid+list_3col.html">Shop</a><span
+                                                class="sub-menu--expander"><i class="icon_plus"></i></span>
+                                            <ul class="sub-menu">
+                                                <li><a href="shop_grid+list_fullwidth.html">Shop grid fullwidth</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="toggleable"><a class="menu-item" href="#">Pages</a><span
+                                                class="sub-menu--expander"><i class="icon_plus"></i></span>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'login' %}">login</a></li>
+                                                <li><a href="{% url 'register' %}">register</a></li>
+                                                <li><a href="{% url 'cart' %}">Cart</a></li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-login">
+                                    <h2>My account</h2><a href="{ % url 'login' % }">Login</a>
+                                    <a href="{% url 'register' %}">Register</a>
+                                </div>
+                                <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a
+                                        href=""><i class="fab fa-twitter"></i></a><a href=""><i
+                                        class="fab fa-invision"> </i></a><a href=""><i class="fab fa-pinterest-p"> </i></a>
+                                </div>
+                            </div>
+                            <div class="ogamin-mobile-menu_bg"></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a
+                                href=""><img src="{% static 'assets/images/logo.png' %}" alt=""></a></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mobile-product_function d-flex align-items-center justify-content-end"><a
+                                class="function-icon icon_heart_alt" href="wishlist.html"></a><a
+                                class="function-icon icon_bag_alt" href="shop_cart.html"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- End slider-->
+    {% include 'companents/_slider.html' %}
+
+    <!-- End items-category-->
+    {% include 'companents/_category.html' %}
+
+    <!-- End partner-->
+    {% include 'companents/_footer.html' %}
+    <!-- End footer-->
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            products: []
+        },
+        created() {
+            this.fetchProducts();
+        },
+        methods: {
+            fetchProducts() {
+                axios.get('/api/products/')
+                    .then(response => {
+                        this.products = response.data;
+                    })
+                    .catch(error => {
+                        console.error("There was an error!", error);
+                    });
+            },
+            sortProducts(order) {
+                if (order === 'asc') {
+                    this.products.sort((a, b) => a.price - b.price);
+                } else {
+                    this.products.sort((a, b) => b.price - a.price);
+                }
+            }
+        }
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+<!--<script src="{% static 'assets/js/slick.min.js' %}"></script>-->
+<script src="{% static 'assets/js/jquery.easing.js' %}"></script>
+<script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.zoom.min.js' %}"></script>
+<script src="{% static 'assets/js/parallax.js' %}"></script>
+<script src="{% static 'assets/js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'assets/js/numscroller-1.0.js' %}"></script>
+<script src="{% static 'assets/js/vanilla-tilt.min.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script>
+    var sence = document.getElementById('img-block')
+    var parallaxInstance = new Parallax(sence, {
+        hoverOnly: true,
+    });
+</script>
+</body>
+</html>
